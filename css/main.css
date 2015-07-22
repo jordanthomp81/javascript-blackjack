@@ -91,11 +91,19 @@ body {
 
 #navigation-container {
     width: 100%;
-    height: 100px;
+    height: auto;
     background-color: #00C9DC;
     text-align:center;
-    padding-top: 25px;
     margin-bottom: 60px;
+}
+
+#game-status {
+    padding-bottom: 20px;  
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 17px;
 }
 
 .button {
@@ -109,6 +117,8 @@ body {
     color: white;
     font-size: 17px;
     margin-right: 20px;
+    margin-top: 40px;
+    margin-bottom: 25px;
 }
 
 .button:hover {
@@ -128,7 +138,7 @@ body {
     height: 250px;
     width: 60%;
     margin: 0 auto;
-    margin-top: 25px;
+    margin-top: 50px;
     margin-bottom: 50px;
 }
 
