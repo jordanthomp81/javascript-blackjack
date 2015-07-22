@@ -79,3 +79,8 @@ hr {
     margin-top: 10px;
 }
 
+#game-status {
+    font-size: 20px;
+    color: grey;
+    margin-left: 100px;
+}

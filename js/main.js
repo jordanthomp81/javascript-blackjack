@@ -32,8 +32,9 @@ blackJack.resetPlayingField = function() {
 
     $('#game-container-top').empty();
     $('#game-container-bottom').empty();
-    $('#hit').removeAttr('disabled');
-    $('#stand').removeAttr('disabled');
+    $('#hit').removeAttr('enabled');
+    $('#stand').removeAttr('enabled');
+    $('#deal').removeAttr('disabled');
 };
 
 blackJack.dealNewGame = function(startDraw) {
@@ -68,24 +69,32 @@ blackJack.dealNewGame = function(startDraw) {
 
 blackJack.hasPlayerBusted = function() {
     if (playerTotal > 21) {
+        $('#game-status').html('Game Status: Dealer Wins');
         console.log("The Player Busted");
         // tell the player that they have lost
         // stop the game by disabling the buttons
         $('#hit').attr("disabled", true);
         $('#stand').attr("disabled", true);
         $('#deal').removeAttr("disabled");
+        blackJack.resetPlayingField();
     }
 };
 
 blackJack.hasDealerBusted = function() {
-    if (dealerTotal > 21) {
-        console.log("The Dealer Busted");
+    if (dealerTotal === 21) {
+        $('#game-status').html('Game Status: Dealer Wins');
+        console.log("Dealer Wins");
         // tell the player that they have lost
         // stop the game by disabling the buttons
-        $('#hit').attr("disabled", true);
-        $('#stand').attr("disabled", true);
-        $('#deal').removeAttr("disabled");
-    }
+        //$('#hit').attr("disabled", true);
+        //$('#stand').attr("disabled", true);
+        //$('#deal').removeAttr("disabled");
+        blackJack.resetPlayingField();
+    }else if (dealerTotal > 21) {
+        $('#game-status').html('Game Status: Player Wins');
+        console.log("The Dealer Busted");
+        blackJack.resetPlayingField();
+    }   
 };
 
 // reminder what will dealer do when they hit 17
