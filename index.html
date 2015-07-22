@@ -1,57 +1,45 @@
-<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
 
-<html lang="en">
-<head>
-    <meta charset="utf-8">
+        <title>BlackJack Game</title>
+        <link href="css/foundation.css" rel="stylesheet">
+        <!-- This is how you would link your custom stylesheet -->
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="css/main.css" rel="stylesheet">
+        <script src="js/vendor/modernizr.js"></script><!--[if IE]>
 
-    <title>BlackJack Game</title>
-    <link href="css/foundation.css" rel="stylesheet">
-    <!-- This is how you would link your custom stylesheet -->
-    <link href="css/main.css" rel="stylesheet">
-    <script src="js/vendor/modernizr.js"></script><!--[if IE]>
+                <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
 
-            <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-
-        <![endif]-->
-</head>
-
-<body>
-    <h1 class="logo">BlackJack</h1>
-
-    <h2 class="sub-logo"><small>Press the deal button to start a
-    game</small></h2>
-
-    <div class="button success" id="deal">
-        Deal
-    </div>
-
-    <div class="button alert" id="hit">
-        Hit
-    </div>
-
-    <div class="button" id="stand">
-        Stand
-    </div>
+            <![endif]-->
+    </head>
+    <body>
+        
+        <div id="header-container">
+        
+            <h4 id="headline">BLACKJACK</h4>
+            
+            <h4 id="sub-text">Your goal is to draw cards that total 21, or <span>come closer to 21 than the dealer without going over.</span></h4>
+            
+        </div>
+        
+        <div id="navigation-container">
+        
+            <div class="button hvr-fade" id="deal">DEAL</div>
+            <div class="button" id="hit">HIT</div>
+            <div class="button" id="stand">STAND</div>
+            
+        </div>
+        
+        <div class="card-container" id="game-container-top"></div>
+        <div class="card-container" id="game-container-bottom"></div>
+        
+        
     
-    <h4 id="game-status">Game Status:</h4>
-    <hr>
+        <script src=
+        "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.8.0/lodash.min.js"></script>
+        <script src="js/main.js"></script>
+    </body>
 
-    <h5 class="top-value-heading">Player:</h5>
-
-    <h5 class="top-js-value"></h5>
-
-    <div class="clear"></div>
-
-    <div id="game-container-top"></div>
-
-    <h5 class="bottom-value-heading">Dealer</h5>
-
-    <h5 class="bottom-js-value"></h5>
-
-    <div class="clear"></div>
-
-    <div id="game-container-bottom"></div><script src=
-    "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script> <script src=
-"https://cdnjs.cloudflare.com/ajax/libs/lodash.js/3.8.0/lodash.min.js"></script> <script src="js/main.js"></script>
-</body>
 </html>
