@@ -125,20 +125,20 @@ body {
 
 .card-container {
     background-color: #EAECF0;
-    height: 300px;
+    height: 250px;
     width: 60%;
     margin: 0 auto;
     margin-bottom: 50px;
 }
 
 .playing-card:nth-of-type(1) {
-    height: 250px;
+    height: 200px;
     margin-top: 25px;
     margin-left: 25px;
 }
 
 .playing-card {
-    height: 250px;
+    height: 200px;
     margin-top: 25px;
     margin-left: -100px;
 }
