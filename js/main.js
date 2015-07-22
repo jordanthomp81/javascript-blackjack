@@ -68,6 +68,7 @@ blackJack.dealNewGame = function(startDraw) {
 
 blackJack.hasPlayerBusted = function() {
     if (playerTotal > 21) {
+        console.log("The Player Busted");
         // tell the player that they have lost
         // stop the game by disabling the buttons
         $('#hit').attr("disabled", true);
@@ -77,10 +78,14 @@ blackJack.hasPlayerBusted = function() {
 };
 
 blackJack.hasDealerBusted = function() {
-        
-    
-        blackJack.drawCard(1, false);
-
+    if (dealerTotal > 21) {
+        console.log("The Dealer Busted");
+        // tell the player that they have lost
+        // stop the game by disabling the buttons
+        $('#hit').attr("disabled", true);
+        $('#stand').attr("disabled", true);
+        $('#deal').removeAttr("disabled");
+    }
 };
 
 // reminder what will dealer do when they hit 17
@@ -142,6 +147,8 @@ blackJack.getCardValue = function(d) {
     }
     $(".top-js-value").html(playerTotal);
     blackJack.hasPlayerBusted();
+    debugger;
+    blackJack.hasDealerBusted();
 };
 
 blackJack.drawCard = function(numOfCardsToDraw, isPlayer) {
@@ -188,4 +195,5 @@ $('#hit').click(function() {
 $('#stand').click(function() {
     // ??? 
     blackJack.hasDealerBusted();
+    blackJack.drawCard(1, false);
 });
