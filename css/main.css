@@ -128,7 +128,12 @@ body {
     height: 250px;
     width: 60%;
     margin: 0 auto;
+    margin-top: 25px;
     margin-bottom: 50px;
+}
+
+.top-card-container {
+    text-align: center;   
 }
 
 .playing-card:nth-of-type(1) {
@@ -141,4 +146,22 @@ body {
     height: 200px;
     margin-top: 25px;
     margin-left: -100px;
+}
+
+.top-value-heading {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: thin;
+    letter-spacing: 2px;
+    color: #333333;
+    display: inline;
+}
+
+.top-js-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: thin;
+    letter-spacing: 2px;
+    color: #333333;
+    display: inline;
 }
