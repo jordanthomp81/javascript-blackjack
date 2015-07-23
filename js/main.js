@@ -34,7 +34,7 @@ blackJack.resetPlayingField = function() {
     $('#game-container-bottom').empty();
     $('#hit').removeAttr('enabled');
     $('#stand').removeAttr('enabled');
-    $('#deal').removeAttr('disabled');
+    
 };
 
 blackJack.dealNewGame = function(startDraw) {
@@ -230,4 +230,6 @@ $('#stand').click(function() {
     blackJack.hasDealerBusted();
     blackJack.drawCard(1, false);
     blackJack.evalHands();
+    $('#deal').attr("disabled", false);
+    
 });
