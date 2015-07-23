@@ -68,18 +68,26 @@ blackJack.dealNewGame = function(startDraw) {
 };
 
 blackJack.evalHands = function() {
-    if ( playerTotal > dealerTotal ) {
+    if ( playerTotal > dealerTotal && playerTotal < 21 && dealerTotal < 21 ) {
         $('#game-status').html('Game Status: Player Wins');
         console.log('Game Status: Player Wins');
         blackJack.resetPlayingField();
-    }else if ( dealerTotal > playerTotal ) {
+    }else if ( dealerTotal > playerTotal && playerTotal < 21 && dealerTotal < 21 ) {
         $('#game-status').html('Game Status: Dealer Wins');
         console.log('Game Status: Dealer Wins');
         blackJack.resetPlayingField();
-    }else {
+    }else if (playerTotal == dealerTotal && playerTotal < 21 && dealerTotal < 21 ) {
        $('#game-status').html('Game Status: Tie!');
         console.log('Game Status: Tie!');
         blackJack.resetPlayingField(); 
+    }else if ( dealerTotal > 21 ) {
+        $('#game-status').html('Game Status: Dealer Busted - Player Wins!');
+        console.log('Game Status: Dealer Busted');
+        blackJack.resetPlayingField();
+    }else if ( playerTotal > 21 ) {
+        $('#game-status').html('Game Status: Player Busted - Dealer Wins!');
+        console.log('Game Status: Player Busted');
+        blackJack.resetPlayingField();
     }
 }
 
@@ -172,7 +180,6 @@ blackJack.getCardValue = function(d) {
     }
     $(".top-js-value").html(playerTotal);
     blackJack.hasPlayerBusted();
-    debugger;
     blackJack.hasDealerBusted();
 };
 
@@ -183,15 +190,7 @@ blackJack.drawCard = function(numOfCardsToDraw, isPlayer) {
             if (isPlayer) {
                 $('#game-container-top').append('<img class = "playing-card" src=' + d.cards[0].image + '>');
                 d.cards[0].isPlayerCard = isPlayer;
-                currCard++;blackJack.evalHands = function() {
-    if ( playerTotal > dealerTotal ) {
-        
-    }else if ( dealerTotal > playerTotal ) {
-        
-    }else {
-        
-    }
-}
+                currCard++;
             }else {
                 $('#game-container-bottom').append('<img class = "playing-card" src=' + d.cards[0].image + '>');
                 d.cards[0].isPlayerCard = false;
@@ -227,6 +226,7 @@ $('#hit').click(function() {
 
 $('#stand').click(function() {
     // ??? 
+    
     blackJack.hasDealerBusted();
     blackJack.drawCard(1, false);
     blackJack.evalHands();
