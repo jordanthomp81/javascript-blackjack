@@ -1,86 +1,174 @@
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,300,200italic,200);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,700);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
 body {
-    background-color: #f1f1f1;
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+
+
+body {
+    background-color: #F6F7FA;
     height: 100%;
     width: 100%;
-    overflow: hidden;
 }
 
-.logo {
-    margin-left: 100px;
-    margin-top: 30px;
-    font-size: 30px;
+.span {
+    display: block;
 }
 
-.sub-logo {
-    margin-left: 100px;
-    margin-top: -15px;
-    font-size: 30px;
+#header-container {
+    width: 100%;
+    height: auto;
+    background-color: #FFF;
+    text-align: center;
 }
 
-.success {
-    margin-left: 100px;
-    margin-top: 8px;
-    margin-right: 10px;
+#header-container > #headline {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 7px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    color: #333333;
 }
 
-.alert {
-    margin-right: 10px;
+#header-container > #sub-text {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 20px;
+    font-weight: light;
+    letter-spacing: 4px;
+    padding-top: 10px;
+    color: #333333;
+    padding-bottom: 40px;
+    line-height: 30px;
 }
 
-hr {
-    color: lightgrey;
+#navigation-container {
+    width: 100%;
+    height: auto;
+    background-color: #00C9DC;
+    text-align:center;
+    margin-bottom: 60px;
 }
 
-.top-value-heading {
-    float: left;
-    margin-left: 100px;
-    margin-top: 8px;
+#game-status {
+    padding-bottom: 20px;  
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 17px;
 }
 
-.top-js-value {
-    float: left;
-    margin-left: 10px;
-    margin-top: 9px;
+.button {
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 5px;
+    padding: 15px 25px 15px 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 17px;
+    margin-right: 20px;
+    margin-top: 40px;
+    margin-bottom: 25px;
 }
 
-.bottom-value-heading {
-    float: left;
-    margin-left: 100px;
-    margin-top: 50px;
+.button:hover {
+    background-color: #007782;
+    border-radius: 5px;
+    padding: 15px 25px 15px 25px;
+    font-family: 'Roboto', sans-serif;
+    font-weight: light;
+    letter-spacing: 1px;
+    color: white;
+    font-size: 17px;
+    margin-right: 20px;
 }
 
-.bottom-js-value {
-    float: left;
-    margin-left: 10px;
-    margin-top: 50px;
-}
-.clear {
-    clear: both;
-}
-
-#game-container-top {
-    width: 1270px;
+.card-container {
+    background-color: #EAECF0;
     height: 200px;
-    background-color: darkgrey;
+    width: 60%;
     margin: 0 auto;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 
-.playing-card {
+.top-card-container {
+    text-align: center;   
+}
+
+.playing-card:nth-of-type(1) {
     height: 150px;
     margin-top: 25px;
     margin-left: 25px;
 }
 
-#game-container-bottom {
-    width: 1270px;
-    height: 200px;
-    background-color: darkgrey;
-    margin: 0 auto;
-    margin-top: 10px;
+.playing-card {
+    height: 150px;
+    margin-top: 25px;
+    margin-left: -100px;
 }
 
-#game-status {
+.top-value-heading {
+    font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    color: grey;
-    margin-left: 100px;
+    font-weight: thin;
+    letter-spacing: 2px;
+    color: #333333;
+    display: inline;
+}
+
+.top-js-value {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: thin;
+    letter-spacing: 2px;
+    color: #333333;
+    display: inline;
 }

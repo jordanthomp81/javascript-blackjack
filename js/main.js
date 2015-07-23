@@ -34,7 +34,7 @@ blackJack.resetPlayingField = function() {
     $('#game-container-bottom').empty();
     $('#hit').removeAttr('enabled');
     $('#stand').removeAttr('enabled');
-    $('#deal').removeAttr('disabled');
+    
 };
 
 blackJack.dealNewGame = function(startDraw) {
@@ -66,6 +66,22 @@ blackJack.dealNewGame = function(startDraw) {
     $('#deal').attr("disabled", true);
     return id;
 };
+
+blackJack.evalHands = function() {
+    if ( playerTotal > dealerTotal ) {
+        $('#game-status').html('Game Status: Player Wins');
+        console.log('Game Status: Player Wins');
+        blackJack.resetPlayingField();
+    }else if ( dealerTotal > playerTotal ) {
+        $('#game-status').html('Game Status: Dealer Wins');
+        console.log('Game Status: Dealer Wins');
+        blackJack.resetPlayingField();
+    }else {
+       $('#game-status').html('Game Status: Tie!');
+        console.log('Game Status: Tie!');
+        blackJack.resetPlayingField(); 
+    }
+}
 
 blackJack.hasPlayerBusted = function() {
     if (playerTotal > 21) {
@@ -167,7 +183,15 @@ blackJack.drawCard = function(numOfCardsToDraw, isPlayer) {
             if (isPlayer) {
                 $('#game-container-top').append('<img class = "playing-card" src=' + d.cards[0].image + '>');
                 d.cards[0].isPlayerCard = isPlayer;
-                currCard++;
+                currCard++;blackJack.evalHands = function() {
+    if ( playerTotal > dealerTotal ) {
+        
+    }else if ( dealerTotal > playerTotal ) {
+        
+    }else {
+        
+    }
+}
             }else {
                 $('#game-container-bottom').append('<img class = "playing-card" src=' + d.cards[0].image + '>');
                 d.cards[0].isPlayerCard = false;
@@ -205,4 +229,7 @@ $('#stand').click(function() {
     // ??? 
     blackJack.hasDealerBusted();
     blackJack.drawCard(1, false);
+    blackJack.evalHands();
+    $('#deal').attr("disabled", false);
+    
 });
